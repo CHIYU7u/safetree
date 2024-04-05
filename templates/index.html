@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>校園樹木管理系統</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="bg-primary text-white py-2">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <!-- 添加 Font Awesome 图标 -->
+                    <i class="fas fa-tree mr-2"></i>校園樹木管理系統
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="floating-bubble">
+        <img id="weather-image" src="/static/rain.png" alt="Weather Icon"/>
+    </div>
+    
+    <div id="overlay" class="overlay" style="display:none;">
+        <div class="wrapper" @click.stop>
+          <div class="block">
+            <img id="overlay-weather-image" src="" alt="Weather Icon" style="max-width: 40px; margin-bottom: 10px;">
+            <div>風速: <span id="wind-speed">0</span></div>
+            <div>溫度: <span id="temperature">0</span></div>
+          </div>
+        </div>
+    </div>
+      
+
+    <!-- <h1>校園樹木管理系統</h1> -->
+    <div id="data"></div>
+    <div id="map"></div>
+    <img id="weather-image" src="/static/rain1.png" style="display: none;" alt="Weather Animation" />
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDN7uVDf00qym_CXTRlx2jXXWJTzVNtPcE&callback=initMap" async defer></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
